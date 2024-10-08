@@ -1,67 +1,46 @@
-/* Estilos generales para la sección */
-.section {
-    margin: 2rem 0; /* Espacio entre secciones */
-}
-
-/* Estilo para el contenedor de productos */
 .product-wrapper {
     position: relative;
-    overflow: hidden; /* Oculta el desbordamiento */
+    overflow: hidden; /* Asegúrate de que los productos fuera del contenedor no se vean */
 }
 
-/* Contenedor de productos */
 .product-container {
-    display: flex; /* Asegura que los elementos de la lista estén en línea */
-    transition: transform 0.3s ease; /* Transición suave al desplazar */
+    display: flex;
+    transition: transform 0.3s ease; /* Transición suave al mover */
 }
 
-/* Estilo para la lista de productos */
 .lista {
-    display: flex; /* Coloca los elementos en línea */
-    margin: 0; /* Elimina márgenes por defecto */
-    padding: 0; /* Elimina padding por defecto */
-    list-style: none; /* Elimina viñetas */
+    display: flex; /* Alinea los elementos en fila */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Elimina los puntos de la lista */
 }
 
-/* Estilo para cada producto */
 .lista li {
-    min-width: 20%; /* Cada producto ocupará un 20% del contenedor (5 productos por fila) */
-    box-sizing: border-box; /* Para incluir padding y border en el tamaño total */
-    flex-shrink: 0; /* Evita que los elementos se reduzcan */
-    padding: 10px; /* Agrega algo de espacio alrededor de los productos */
+    flex: 0 0 auto; /* Asegúrate de que los elementos no se expandan */
+    width: 100px; /* Ajusta este valor para el tamaño deseado */
     text-align: center; /* Centra el texto */
 }
 
-/* Estilo para las imágenes de los productos */
 .lista img {
-    width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
-    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    width: 100%; /* Hace que la imagen se ajuste al contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
-/* Estilos para las flechas de desplazamiento */
 .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-    border: 1px solid #ccc; /* Borde gris */
-    border-radius: 50%; /* Hace que las flechas sean circulares */
-    padding: 10px; /* Espacio alrededor del icono de flecha */
-    cursor: pointer; /* Cambia el cursor al pasar el ratón */
-    z-index: 1; /* Asegura que las flechas estén encima de otros elementos */
+    cursor: pointer;
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    font-size: 24px; /* Aumenta el tamaño de las flechas */
+    position: absolute; /* Posiciona las flechas en relación al contenedor */
+    top: 50%; /* Centra verticalmente */
+    transform: translateY(-50%); /* Compensa el desplazamiento */
+    z-index: 10; /* Asegúrate de que las flechas estén por encima de otros elementos */
 }
 
 .arrow.left {
-    left: 10px; /* Posición de la flecha izquierda */
+    left: 10px; /* Espacio desde la izquierda */
 }
 
 .arrow.right {
-    right: 10px; /* Posición de la flecha derecha */
-}
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 768px) {
-    .lista li {
-        min-width: 50%; /* En pantallas pequeñas, muestra 2 productos por fila */
-    }
+    right: 10px; /* Espacio desde la derecha */
 }

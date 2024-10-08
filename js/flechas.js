@@ -25,7 +25,8 @@ function scrollProducts(section, direction) {
         currentIndex[section] = newIndex;
 
         // Desplaza la lista de productos
-        const offset = -currentIndex[section] * (100 / 5); // Cambia 5 si hay más elementos visibles
+        const visibleItems = 5; // Cambia este valor según cuántos elementos deseas mostrar
+        const offset = -currentIndex[section] * (100 / visibleItems); 
         productList.style.transform = `translateX(${offset}%)`;
     }
 }
