@@ -1,6 +1,9 @@
 let currentIndex = {
     grips: 0,
     pedal: 0,
+    tenedor: 0,
+    platos: 0,
+    timon: 0 // Sección de Timones
 };
 
 function scrollProducts(section, direction) {
@@ -26,7 +29,3 @@ function scrollProducts(section, direction) {
         productList.style.transform = `translateX(${offset}%)`;
     }
 }
-
-// Ejemplo de cómo llamar a la función
-// scrollProducts('grips', 1); // Para mover a la derecha
-// scrollProducts('grips', -1); // Para mover a la izquierda
