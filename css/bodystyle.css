@@ -1,0 +1,27 @@
+:root{
+    --rubik: 'Rubik', sans-serif;
+    --roboto: 'Roboto', sans-serif;
+    --white: #ffffff;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --dark: #1A202C;
+    --ligth_purple: #f3f3ff;
+    --lila: #eeeefc;
+    --black: #21232E;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-size: 16px;
+    font-family: var(--roboto);
+    color: var(--dark);
+    font-weight: 400;
+    background: url(/assets/images/fondo.jpg) repeat;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+}

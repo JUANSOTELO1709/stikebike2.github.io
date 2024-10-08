@@ -6,185 +6,214 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/bodystyle.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/principal.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+    <link rel="stylesheet" href="./css/styleM.css">
+    <link rel="stylesheet" href="./css/scroll.css">
+
     <title>Stike bike shop</title>
 </head>
-
+    <!-- Fontawsome -->
+<script src="https://kit.fontawesome.com/a8ad4fc3d8.js" crossorigin="anonymous"></script>
 
 
 <body>
-    <header class="container header">
-        <div class="logo">
-            <a class="logo__link" href="#">
-                <img src="./img/vector.png" alt="logo-geek">
-                Stike <span>Bike-Shop</span>
-            </a>
 
 
-            <div class="buscador">
-                <input class="buscador__input" id="buscador" type="text" placeholder="Que desea buscar?">
-                <button class="buscador__button" id="buscador__button">
-                    <img src="./img/lupa-buscador.png" alt="lupa-buscador">
-                </button>
+    <a href="https://wa.me/3118108848" class="whatsapp-button" target="_blank">
+        <img src="icon-whatsapp.png" alt="WhatsApp Chat">
+    </a>
+
+    <header id="header" >
+        <div class="container_header">
+            <a href="#principal" ><img class="logo__link" src="./img/vector.png" alt="Logo"></a>
+            <a href="" ><img class="Fate_logo" src="./img/LOGO-FATE.png"></a>
+
+            <nav class="items_container">
+                <a class="menuItems" href="#grips">Grips</a>
+                <a class="menuItems" href="#pedales">Pedales</a>
+                <a class="menuItems" href="#platos">platos</a>
+                <a class="menuItems" href="#postes">postes</a>
+                <a class="menuItems" href="#contact">sillines</a> 
+                <a class="menuItems" href="#tenedor">tenedores</a>
+                <a class="menuItems" href="#timon">timones</a>
+                
+
+            </nav>
+
+              <!---- Burguer Menu ---->
+            <div class="nav_burguer">
+                <div class="nav_burguer-line-1"></div>
+                <div class="nav_burguer-line-2"></div>
+                <div class="nav_burguer-line-3"></div>
             </div>
         </div>
-        <a href="./home-login.html" class="button button__login">
-            Login
-        </a>
-        <button class="buscador__button buscador__button--active">
-            <img src="./img/lupa-buscador.png" alt="lupa-buscador">
-        </button>
 
         
 
     </header>
+
+
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <!-- Banner -->
+
     <section class="banner">
         <div class="container banner__contenido">
-            <h2 class="banner__titulo">Promociones</h2>
-            <h4 class="banner_subtitulo">Productos selecicionados con 33% de descuento</h4>
+            <h2 class="banner__titulo">Lo Nuevo</h2>
+            <h4 class="banner_subtitulo">Productos totalmente unicos</h4>
             <a class="button banner__button" href="promocion.html">Ver Bicicletas</a>
         </div>
     </section>
 
-
     <main>
+        <!-- MENU DE CATEGORIAS -->
         <div id="main-categorias" class="container">
-            <section class="section">
+            <!-- PRIMERA SECCION GRIPS -->
+            <section class="section" id="grips">
                 <div class="section-titulo">
-                    <h2>Marcos</h2>
+                    <h2>Grips</h2>
                     <a class="section-ver-todo" href="./productos_marcos.html">Ver todo<img src="./img/flecha.png" alt="flecha"></a>
                 </div>
-                <div>
-                    <ul class="lista">
-                        <li>
-                            <img src="img/2.jpg" alt="">
-                            <p>Marco </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/3.jpg" alt="">
-                            <p>Marco </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/4.jpg" alt="">
-                            <p>Marco </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/5.jpg" alt="">
-                            <p>Marco </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/6.jpg" alt="">
-                            <p>Marco </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/7.jpg" alt="">
-                            <p>Marco </p>
-                            <p>$</p>
-                            
-                        </li>
+                <div class="product-wrapper" style="position: relative;">
+                    <button class="arrow left" onclick="scrollProducts('grips', -1)">&#10094;</button> <!-- Flecha izquierda -->
     
-                    </ul>
+                    <div class="product-container">
+                        <ul class="lista">
+                            <li onclick="openModal(0)">
+                                <img src="img/stike/gripas/Gripa_cult_crew.jpg" alt="Grips cult crew">
+                                <p>Grips cult crew</p>
+                                <p>$50.000</p>
+                            </li>
+                            <li onclick="openModal(1)">
+                                <img src="img/stike/gripas/Gripa_eanster_Riblet.jpg" alt="Grips eanster riblet">
+                                <p>Grips eanster riblet</p>
+                                <p>$45.000</p>
+                            </li>
+                            <li onclick="openModal(2)">
+                                <img src="img/stike/gripas/Grips_kink_samurai.jpg" alt="Grips kink samurai">
+                                <p>Grips kink samurai</p>
+                                <p>$50.000</p>
+                            </li>
+                            <li onclick="openModal(3)">
+                                <img src="img/stike/gripas/Grips odyssey Broc Rayford.jpg" alt="Grips odyssey Broc Rayford">
+                                <p>Grips odyssey Broc Rayford</p>
+                                <p>$50.000</p>
+                            </li>
+                            <li onclick="openModal(4)">
+                                <img src="img/stike/gripas/grips_merrit_ITSY.jpg" alt="Grips merrit ITSY">
+                                <p>Grips merrit ITSY</p>
+                                <p>$45.000</p>
+                            </li>
+                            <li onclick="openModal(5)">
+                                <img src="img/stike/gripas/Grips_cult_Ricany.jpg" alt="Grips cult Ricany">
+                                <p>Grips cult Ricany</p>
+                                <p>$50.000</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="arrow right" onclick="scrollProducts('grips', 1)">&#10095;</button> <!-- Flecha derecha -->
                 </div>
-            </section> 
+            </section>
     
-            <section class="section">
+            <!-- SEGUNDA SECCION PEDALES -->
+            <section class="section" id="pedal">
                 <div class="section-titulo">
-                    <h2 id="consolas">Manzanas</h2>
+                    <h2 id="consolas">Pedales</h2>
                     <a class="section-ver-todo" href="./manzanas.html">Ver todo<img src="./img/flecha.png" alt="flecha"></a>
                 </div>
-                <div>
-                    <ul class="lista">
-                        <li>
-                            <img src="img/8.jpg" alt="">
-                            <p>Manzana</p>
-                            <p>$ </p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/9.jpg" alt="">
-                            <p>Manzana </p>
-                            <p>$ </p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/10.jpg" alt="">
-                            <p>Manzana </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/11.jpg" alt="">
-                            <p>Manzana </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/12.jpg" alt="">
-                            <p>Manzana </p>
-                            <p>$</p>
-                            
-                        </li>
-                        <li>
-                            <img src="img/13.jpg" alt="">
-                            <p>Manzana </p>
-                            <p>$ </p>
-                            
-                        </li>
-    
-                    </ul>
+                <div class="product-wrapper" style="position: relative;">
+                    <button class="arrow left" onclick="scrollProducts('pedal', -1)">&#10094;</button> <!-- Flecha izquierda -->
+                    <div class="product-container">
+                        <ul class="lista">
+                            <li>
+                                <img src="img/stike/Pedales/pedal BSD JONESIN.jpg" alt="">
+                                <p>PEDAL BSD JONESIN</p><BR>
+                                <p>$95.000</p>
+                            </li>
+                            <li>
+                                <img src="img/stike/Pedales/PEDAL Demoltiol trooper(rosa).jpg" alt="">
+                                <p>PEDAL DEMOLTIOL TROOPEL(rosa)</p>
+                                <p>$80.000</p>
+                            </li>
+                            <li>
+                                <img src="img/stike/Pedales/PEDAL Demoltiol trooper.jpg" alt="">
+                                <p>PEDAL DEMOLTIOL TROOPEL(Azul)</p>
+                                <p>$80.000</p>
+                            </li>
+                            <li>
+                                <img src="img/stike/Pedales/pedal eastern ATOM.jpg" alt="">
+                                <p>PEDAL EASTERN ATOM</p><BR>
+                                <p>$50.000</p>
+                            </li>
+                            <li>
+                                <img src="img/stike/Pedales/pedal FATE.jpg" alt="">
+                                <p>PEDAL FATE</p><BR>
+                                <p>$65.000</p>
+                            </li>
+                            <li>
+                                <img src="img/stike/Pedales/PEDAL ODYSSEY TWISTED NEGR.jpg" alt="">
+                                <p>PEDAL ODYSSEY TWISTED</p><BR>
+                                <p>$65.000</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="arrow right" onclick="scrollProducts('pedal', 1)">&#10095;</button> <!-- Flecha derecha -->
                 </div>
-            </section> 
+            </section>
 
+    
 
-            <section class="section">
+    
+            <!-- TERCERA SECCION PLATOS -->
+            <section class="section" id="platos">
                 <div class="section-titulo">
-                    <h2>Accesorios</h2>
+                    <h2>Platos</h2>
                     <a class="section-ver-todo" href="./accesorios.html">Ver todo<img src="./img/flecha.png" alt="flecha"></a>
                 </div>
                 <div>
                     <ul class="lista">
                         <li>
-                            <img src="img/14.jpg" alt="">
-                            <p>guantes</p>
+                            <img src="img/stike/platos/Plato SUNDAY SABRETOOTH.jpg" alt="">
+                            <p>Plato SUNDAY SABRETOOTH</p>
                             <p>$</p>
                             
                         </li>
                         <li>
-                            <img src="img/15.jpg" alt="">
-                            <p>barends</p>
+                            <img src="img/stike/platos/plato CINEMA REEL.jpg" alt="">
+                            <p>plato CINEMA REEL</p>
                             <p>$</p>
                             
                         </li>
                         <li>
-                            <img src="img/16.jpg" alt="">
-                            <p>platos</p>
+                            <img src="img/stike/platos/PLATO STRANGER STRANGERGRAM.jpg" alt="">
+                            <p>Plato FLY BIKES TRACTOR</p>
                             <p>$</p>
                             
                         </li>
                         <li>
-                            <img src="img/17.jpg" alt="">
-                            <p>cassettes</p>
+                            <img src="img/stike/platos/PLATO MUTANTY DIAMONT CROMADO.jpg" alt="">
+                            <p>PLATO MUTANTY DIAMONT CROMADO</p>
                             <p>$</p>
                             
                         </li>
                         <li>
-                            <img src="img/18.jpg" alt="">
-                            <p>sillas</p>
+                            <img src="img/stike/platos/PLATO MUTANTY DIAMONT CROMADO.jpg" alt="">
+                            <p>PLATO MUTANTY DIAMONT CROMADO</p>
                             <p>$</p>
                             
                         </li>
                         <li>
-                            <img src="img/19.jpg" alt="">
-                            <p>bielas </p>
+                            <img src="img/stike/platos/PLATO MUTANTY DIAMONT NEGRO.jpg" alt="">
+                            <p>PLATO MUTANTY DIAMONT NEGRO</p>
                             <p>$</p>
                             
                         </li>
@@ -193,9 +222,10 @@
                 </div>
             </section> 
 
-            <section class="section">
+            <!-- CUARTA SECCION TENEDORES -->
+            <section class="section" id="tenedor">
                 <div class="section-titulo">
-                    <h2>Repuestos</h2>
+                    <h2>Tenedores</h2>
                     <a class="section-ver-todo" href="./repuestos.html">Ver todo<img src="./img/flecha.png" alt="flecha"></a>
                 </div>
 
@@ -203,17 +233,29 @@
 
                     <ul class="lista">
                         <li>
-                            <img src="img/20.jpg" alt="">
+                            <img src="img/stike/tenedores/enedor odyssey R25.jpg" alt="">
                             <p>repuesto </p>
                             <p>$</p>
                         </li>
                             <li>
-                                <img src="img/21.jpg" alt="">
+                                <img src="img/stike/tenedores/Tenedor fiction shank cromado.jpg" alt="">
                                 <p>repuesto </p>
                                 <p>$</p>         
                             </li>
                             <li>
-                                <img src="img/22.jpg" alt="">
+                                <img src="img/stike/tenedores/TENEDOR FICTION SHANK.jpg" alt="">
+                                <p>repuesto </p>
+                                <p>$</p>
+                                    
+                            </li>
+                            <li>
+                                <img src="img/stike/tenedores/Tenedor Odyssey r15.jpg" alt="">
+                                <p>repuesto </p>
+                                <p>$</p>
+                                    
+                            </li>
+                            <li>
+                                <img src="img/stike/tenedores/Tenedor piraña.jpg" alt="">
                                 <p>repuesto </p>
                                 <p>$</p>
                                     
@@ -222,10 +264,49 @@
                 </div>
 
             </section>
+
+            <!-- QUINTA SECCION TIMONES -->
+            <section class="section" id="timon">
+                <div class="section-titulo">
+                    <h2>Timones</h2>
+                    <a class="section-ver-todo" href="./repuestos.html">Ver todo<img src="./img/flecha.png" alt="flecha"></a>
+                </div>
+
+                <div>
+
+                    <ul class="lista">
+                        <li>
+                            <img src="img/stike/Timones/Timon cult AK.jpg" alt="">
+                            <p>repuesto </p>
+                            <p>$</p>
+                        </li>
+                            <li>
+                                <img src="img/stike/Timones/Timon FIENDTEAMMedida.jpg" alt="">
+                                <p>repuesto </p>
+                                <p>$</p>         
+                            </li>
+                            <li>
+                                <img src="img/stike/Timones/Timón EXTENSIÓN.jpg" alt="">
+                                <p>repuesto </p>
+                                <p>$</p>
+                                    
+                            </li>
+                            <li>
+                                <img src="img/stike/Timones/Timón MUTANTY HELL.jpg" alt="">
+                                <p>repuesto </p>
+                                <p>$</p>
+                                    
+                            </li>
+              
+
+                </div>
+
+            </section>
+
         </div>
         
-
-        <section class="contacto-fondo">
+        <!-- MENU DE CONTACTOS -->
+        <section class="contacto-fondo" id="contact">
             <div class="container contacto">
                 <a class="logo__link logo__link--formulario" href="#">
                     <img src="./img/vector.png" alt="logo-geek">
@@ -252,12 +333,27 @@
                 </form>
             </div>
         </section>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modal-title">Ventana Modal</h2>
+                <img id="modal-img" src="" alt="">
+                <p id="modal-price"></p>
+                <p id="modal-description"></p>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         <a href="https://github.com/StikeBike" target="_blank"><img src="imG/github.png" alt="icono github"></a>
         <p>Desarrollado por Juan Sotelo Y Miguel Sotelo</p>
         <p>★</p>
     </footer>
+
+            <script src="./js/script.js"></script>
+            <script src="./js/scriptM.js"></script>
+            <script src="./js/flechas.js"></script>
+
+
 </body>
     
 </html>

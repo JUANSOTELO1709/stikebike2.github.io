@@ -74,6 +74,15 @@ a {
     color: var(--blue);
 }
 
+.Fate_logo {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    width: 10;
+    height: 15;
+    color: var(--blue);
+}
+
 @media (min-width: 768px) {
     .logo__link {
         font-size: 20px;
@@ -118,6 +127,12 @@ a {
  
 }
 
+
+
+
+
+
+
 .buscador__input:focus {
     outline: none;
 }
@@ -142,26 +157,34 @@ a {
     cursor: pointer;
 }
 
+
+
+
+
+
 /* Banner */
 .banner {
-    height: 352px;
-    background-image: url(../img/banner.jpg);
+    height: 552px; /* Altura fija del banner */
+    background-image: url(../img/banner4.png); /* Primera imagen */
     background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
+    background-position: left center; /* Mantener la parte izquierda fija */
+    background-size: auto 100%; /* Mantener la proporción de la imagen, ocupando toda la altura */
     padding-bottom: 2rem;
+    animation: fadeImages 10s ease-in-out infinite; /* Animación para alternar imágenes */
+    position: relative;
 }
 
+/* Para controlar el contenido del banner color letra banner etc */
 .banner__contenido {
     position: relative;
-    top: 40%;
-    color: #fff;
+    top: 60%;
+    color: #ffffff; 
     margin-bottom: 1rem;
-
 }
 
+/* Estilos del texto del banner */
 .banner__titulo {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
 }
 
@@ -170,41 +193,93 @@ a {
     font-size: 12.5px;
     font-weight: 400;
 }
+
+/* Media queries para ajustar texto en pantallas más grandes */
 @media (min-width: 360px) {
     .banner__titulo {
         font-size: 40px;
-        font-weight: 700;
     }
-    
     .banner_subtitulo {
-        margin-top: .5rem;
         font-size: 19px;
-        font-weight: 400;
     } 
 }
-@media (min-width:768px) {
+
+@media (min-width: 768px) {
     .banner__titulo {
         font-size: 60px;
-        font-weight: 700;
     }
-    
     .banner_subtitulo {
-        margin-top: .5rem;
         font-size: 25px;
-        font-weight: 400;
     }
 }
-
 
 .banner__button {
     display: block;
     width: 10rem;
     margin-top: 1rem;
     padding: 1rem;
-    background-color: var(--blue);
-    color: #fff;
+    background-color: transparent;
+    color: var(--ligth_blue);
     text-align: center;
+    border: 2px solid var(--black);
+    border-radius: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.banner__button:hover {
+    background-color: var(--black);
+    color: #fff;
+}
+
+
+/* Nueva animación para alternar las imágenes */
+@keyframes fadeImages {
+    0% {
+        background-image: url(../img/banner4.png); /* Primera imagen */
+        opacity: 1;
+    }
+    50% {
+        background-image: url(../img/banner5.png); /* Segunda imagen */
+        opacity: 0.8; /* Se va desvaneciendo */
+    }
+    100% {
+        background-image: url(../img/banner4.png); /* Regresa la primera imagen */
+        opacity: 1;
+    }
+}
+
+
+
+/* Estilos para el botón de WhatsApp */
+/* Estilos para el botón de WhatsApp */
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    /* Quitar el color de fondo para no tapar el ícono */
+    background-color: transparent;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+.whatsapp-button img {
+    width: 60px; /* Tamaño ajustado al ícono de WhatsApp */
+    height: 60px;
+}
+
+
+
 
 /* secciones stars wars */
 #main-categorias{
@@ -584,3 +659,5 @@ label{
         width: 50%;
     }
 }
+
+

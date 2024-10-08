@@ -1,0 +1,351 @@
+@media screen and (max-width: 1160px) {
+header{
+    top: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.title_three{
+    font-size: 35px;
+}
+
+.title_one{
+    font-size: 40px;
+    line-height: 1.2;
+}
+
+.title_five{
+    font-size: 25px;
+}
+
+}
+
+@media screen and (max-width: 2500px) {
+    body{
+        background: url(/assets/images/bg-body.png) no-repeat center;
+    }
+
+    header{
+        height: 90px;
+    }
+
+    .logo_header{
+        width: 170px;
+    }
+
+    .nav_burguer {
+    width: 35px;
+    display: block;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .nav_burguer-line-1,
+  .nav_burguer-line-2,
+  .nav_burguer-line-3 {
+    display: block;
+    background-color: var(--black);
+    content: "";
+    height: 6px;
+    border-radius: 3px;
+    margin: 4px 0;
+    transition: all 450ms ease-in-out;
+  }
+
+  .nav_burguer-line-1.active {
+    transform: translatey(8px) rotate(135deg);
+  }
+
+  .nav_burguer-line-2.active {
+    transform: translate(20px, 2px);
+    opacity: 0;
+  }
+
+  .nav_burguer-line-3.active {
+    transform: translatey(-12px) rotate(-135deg);
+  }
+
+  .items_container{
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    position: fixed;
+    padding: 80px 30px;
+    width: 280px;
+    height: 100vh;
+    top: 0;
+    z-index: 3;
+    left: -350px;
+    background-color: var(--ligth_purple);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease 0s;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .items_container.active{
+    opacity: 1;
+    left: 0;
+  }
+
+  .menuItems{
+    margin: 30px 0;
+    font-size: 16px;
+  }
+
+  .dark_mode_button{
+    right: 97px;
+  }
+
+  .principal{
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
+  .principal_one{
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .principal_two{
+    display: none;
+  }
+
+  .about_me-container{
+    flex-direction: column-reverse;
+  }
+
+  .about_me-one{
+    width: 100%;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+   .about_me-img {
+    width: 300px;
+    }
+
+    .about_me-two {
+        width: 100%;
+    }
+
+    .about_me-paragraph {
+        text-align: justify;
+    }
+
+    .contact_card_left{
+        width: 100%;
+    }
+
+    .contact_card_right{
+        display: none;
+    }
+
+  .background_blur{
+    visibility: hidden;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa62;
+    backdrop-filter: blur(6px);
+  }
+
+  .background_blur.active{
+    visibility: visible;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    body{
+        background: url(/assets/images/bg-body.png) no-repeat top;
+    }
+
+    .about_me, 
+    .skills,
+    .studies,
+    .projects{
+        padding: 60px 27px;
+    }
+
+    .items_container{
+        width: 230px;
+    }
+
+    .principal_one_buttons {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .contact_me_button {
+        margin-right: 15px;
+    }
+
+    .studies_cards,
+    .container_projects {
+        gap: 50px;
+    }
+
+    .project_card {
+        width: 330px;
+        height: 350px;
+        padding: 12px;
+    }
+
+    .container_title {
+        margin-bottom: 55px;
+        padding: 0;
+    }
+
+    .project_card_img {
+        width: 100%;
+    }
+    
+    .container_buttons {
+        margin-top: 25px;
+        width: 95%;
+    }
+ 
+    .buttons {
+        padding: 12px 36px;
+    }
+
+    .container_description {
+        top: 70px;
+        font-size: 14px;
+        width: 242px;
+        padding: 0 15px;
+    }
+
+    .container_tecnologies {
+        bottom: 90px;
+    }
+
+    .contact{
+        padding: 60px 14px;
+    }
+
+    .contact_card{
+        padding: 10px;
+        width: 100%;
+    }
+
+    .container_contact_card{
+        justify-content: center;
+    }
+
+    .contact_card_left{
+        height: 95%;
+        padding: 0 12px;
+    }
+
+    .card_items_container{
+        margin: 0;
+    }
+
+    .contact_card_items{
+        margin: 15px 0;
+    }
+
+    .icon_box{
+        height: 20px;
+        width: 20px;
+        font-size: 20px;
+        margin: 14px;
+    }
+
+    .container_contact_button{
+        margin-top: 15px;
+    }
+
+    footer{
+        text-align: center;
+        line-height: 1.3;
+    }
+
+    .dark_mode_button{
+        right: 68px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .contact_me_button{
+        padding: 17px 24px;
+    }
+
+    .download_button{
+        padding: 17px 15px;
+    }
+
+    .contact_card{
+        height: 330px;
+    }
+
+    .about_me-img{
+        width: 250px;
+    }
+
+    .icon_box{
+        display: none;
+    }
+
+    .buttons{
+        padding: 12px 30px;
+    }
+    
+    }
+
+    @media screen and (max-width: 280px) {
+        .logo_header{
+            width: 130px;
+        }
+
+        .about_me, 
+        .skills,
+        .studies,
+        .projects{
+            padding: 60px 10px;
+        }
+        .contact_me_button {
+            padding: 17px 11px;
+            font-size: 12px;
+        }
+
+        .title_three {
+            font-size: 30px;
+        }
+
+        .title_one {
+            font-size: 35px;
+        }
+
+        .title_five {
+            font-size: 20px;
+        }
+
+        .download_button {
+            padding: 17px 7px;
+            font-size: 12px;
+        }
+
+        .container_title h1 {
+            font-size: 20px;
+        }
+
+        .container_buttons {
+            margin-top: 47px;
+        }
+
+        .buttons {
+            padding: 12px 20px;
+            font-size: 13px;
+        }
+
+        .nav_burguer {
+            z-index: 4;
+        }
+        
+    }
