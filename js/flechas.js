@@ -1,34 +1,30 @@
-let currentIndex = {
-    grips: 0,
-    pedal: 0,
-    tenedor: 0,
-    platos: 0,
-    timon: 0 // Sección de Timones
-};
+const lista = document.querySelector('.lista');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+const liWidth = 200; // ancho de cada elemento li
+const elementos = lista.children;
+const cantidadElementos = elementos.length;
 
-function scrollProducts(section, direction) {
-    const productList = document.querySelector(`#${section} .product-container .lista`);
-    const totalProducts = productList.children.length;
-    const visibleItems = 5; // Cambia este valor según cuántos elementos deseas mostrar
-    const itemWidth = 100 / visibleItems; // Ancho de cada elemento
-
-    // Calcula el nuevo índice temporal
-    let newIndex = currentIndex[section] + direction;
-
-    // Si el nuevo índice es menor que 0, salta al último producto
-    if (newIndex < 0) {
-        newIndex = totalProducts - 1;
-    }
-
-    // Si el nuevo índice es mayor que el último, salta al primer producto
-    if (newIndex >= totalProducts) {
-        newIndex = 0;
-    }
-
-    // Actualiza el índice actual
-    currentIndex[section] = newIndex;
-
-    // Desplaza la lista de productos
-    const offset = -newIndex * itemWidth;
-    productList.style.transform = `translateX(${offset}%)`;
+// Clonar los elementos para crear el efecto de bucle
+for (let i = 0; i < cantidadElementos; i++) {
+  const clone = elementos[i].cloneNode(true);
+  lista.appendChild(clone);
 }
+
+let currentIndex = 0;
+
+prevBtn.addEventListener('click', () => {
+  currentIndex -= 1;
+  if (currentIndex < 0) {
+    currentIndex = cantidadElementos - 1;
+  }
+  lista.style.transform = `translateX(${currentIndex * -liWidth}px)`;
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex += 1;
+  if (currentIndex >= cantidadElementos * 2) {
+    currentIndex = 0;
+  }
+  lista.style.transform = `translateX(${currentIndex * -liWidth}px)`;
+});

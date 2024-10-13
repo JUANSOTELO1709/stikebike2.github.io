@@ -7,7 +7,6 @@
     padding: 2rem; 
     margin: 0 auto; 
     box-sizing: border-box; 
-    border: 2px solid #3498db; 
     border-radius: 8px; 
   }
   
@@ -15,7 +14,6 @@
     width: 100%; 
     max-width: 1200px; 
     padding: 2rem 0; 
-    border: 2px solid #e74c3c; 
     border-radius: 8px; 
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
     height: 500px; 
@@ -41,37 +39,47 @@
   }
   
   .product-container {
-    display: block; 
-    margin: 2rem 0; 
-    border: 2px solid red; 
+    display: block;
+    margin: 2rem 0;
   }
-  
-  .lista {
-    margin: 0; 
-    padding: 0; 
-    border: 1px solid green;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    gap: 1.5rem;
-    height: 100%; /* Ajusta la altura de la lista al 100% de la sección */
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+  .image-container {
+    display: flex;
     flex-wrap: nowrap;
-    scrollbar-width: none;
-    width: 100%; /* Ajusta el ancho de la lista al 100% de la sección */
+    width: 100%;
+    overflow-x: hidden; /* Agregado */
+    overflow-y: hidden ;
+    scroll-snap-type: x mandatory;
+  }
+
+  .lista {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  .lista li {
+    list-style-type: none;
+    margin: 0.5rem;
+    padding: 1rem;
+    height: 250px;
+    display: inline-block;
+    text-align: center;
+    width: 200px;
+    flex-shrink: 0;
+    scroll-snap-align: start; /* Agregado */
   }
   
   .lista li {
     list-style-type: none;
-    margin: 0.5rem; /* Ajusta la margen entre elementos li */
+    margin: 0.5rem;
     padding: 1rem;
-    border: 1px solid yellow;
-    height: 250px; /* Ajusta la altura de cada elemento li */
+    height: 250px;
     display: inline-block;
     text-align: center;
-    width: 200px; /* Ajusta el ancho de cada elemento li */
-}
+    width: 200px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
   .lista li img {
     width: 100%; 
     height: 200px; /* Ajusta la altura de la imagen para que se vea correctamente */
@@ -83,9 +91,7 @@
     display: block; 
   }
   
-  .lista li:nth-child(n+5) {
-    display: none;
-  }
+ 
   
   .producto {
     display: flex;
@@ -96,13 +102,22 @@
   /* Estilos para pantallas pequeñas (móvil) */
 /* Estilos para pantallas pequeñas (móvil) */
 @media (max-width: 480px) {
+    .prev, .next {
+      display: none;
+    }
     .lista {
-      grid-template-columns: repeat(4, 1fr); /* 4 columnas en móviles */
+      grid-template-columns: repeat(6, 1fr); /* 4 columnas en móviles */
       height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+    .image-container {
+      overflow-x: auto; /* Permitir deslizamiento horizontal */
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch; /* Hacer que la barra de desplazamiento sea invisible */
     }
     .lista li {
       height: 180px; /* Ajustar la altura para móviles */
       width: 160px; /* Ajustar el ancho de cada elemento li para móviles */
+      flex-wrap: nowrap;
     }
     .lista li img {
       max-width: 140px; /* Ajustar el ancho máximo de la imagen para móviles */
@@ -110,6 +125,10 @@
       height: 120px; /* Ajustar la altura de la imagen para móviles */
     }
   }
+
+
+
+  
   /* Estilos para pantallas medianas y grandes (PC) */
   @media (min-width: 481px) {
     .lista li {
@@ -119,4 +138,30 @@
     .lista li img {
       height: 250px; /* Ajusta la altura de la imagen para que se vea correctamente en pantallas de PC */
     }
+
+
+
+    
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8); /* Fondo semi -transparente */
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav-btn.prev {
+    left: 0;
+  }
+  
+  .nav-btn.next {
+    right: 0;
   }
