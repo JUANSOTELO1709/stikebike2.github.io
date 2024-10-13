@@ -9,24 +9,26 @@ let currentIndex = {
 function scrollProducts(section, direction) {
     const productList = document.querySelector(`#${section} .product-container .lista`);
     const totalProducts = productList.children.length;
+    const visibleItems = 5; // Cambia este valor según cuántos elementos deseas mostrar
+    const itemWidth = 100 / visibleItems; // Ancho de cada elemento
 
     // Calcula el nuevo índice temporal
     let newIndex = currentIndex[section] + direction;
 
-    // Asegúrate de que el índice esté dentro de los límites
+    // Si el nuevo índice es menor que 0, salta al último producto
     if (newIndex < 0) {
-        newIndex = 0; // Limite inferior
-    } else if (newIndex > totalProducts - 1) {
-        newIndex = totalProducts - 1; // Limite superior
+        newIndex = totalProducts - 1;
     }
 
-    // Solo actualiza currentIndex y desplaza si hay un cambio en el índice
-    if (newIndex !== currentIndex[section]) {
-        currentIndex[section] = newIndex;
-
-        // Desplaza la lista de productos
-        const visibleItems = 5; // Cambia este valor según cuántos elementos deseas mostrar
-        const offset = -currentIndex[section] * (100 / visibleItems); 
-        productList.style.transform = `translateX(${offset}%)`;
+    // Si el nuevo índice es mayor que el último, salta al primer producto
+    if (newIndex >= totalProducts) {
+        newIndex = 0;
     }
+
+    // Actualiza el índice actual
+    currentIndex[section] = newIndex;
+
+    // Desplaza la lista de productos
+    const offset = -newIndex * itemWidth;
+    productList.style.transform = `translateX(${offset}%)`;
 }

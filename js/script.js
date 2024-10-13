@@ -13,7 +13,7 @@ const modalImg = document.getElementById("modal-img");
 const modalTitle = document.getElementById("modal-title");
 const modalPrice = document.getElementById("modal-price");
 const modalDescription = document.getElementById("modal-description");
-const closeBtn = document.querySelector(".close");  // Simplificación de la selección
+const closeBtn = document.querySelector(".close");
 
 // Función para mostrar el menú de navegación
 const showNavMenu = () => {
@@ -55,12 +55,11 @@ const products = [
         price: "$45.000",
         description: "Grips eanster con diseño ergonómico para mayor comodidad."
     },
-    // Agrega más productos aquí
 ];
 
 // Función para abrir el modal con la información del producto
 function openModal(index) {
-    modal.style.display = "block";  // Mostrar el modal
+    modal.style.display = "block";
     modalImg.src = products[index].img;
     modalTitle.textContent = products[index].title;
     modalPrice.textContent = products[index].price;
@@ -69,12 +68,12 @@ function openModal(index) {
 
 // Función para cerrar el modal
 closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";  // Cerrar modal al hacer clic en el botón cerrar
+    modal.style.display = "none";
 });
 
 // Cerrar modal al hacer clic fuera del contenido del modal
 window.addEventListener("click", (event) => {
     if (event.target === modal) {
-        modal.style.display = "none";  // Cerrar si el clic es fuera del modal
+        modal.style.display = "none";
     }
 });
