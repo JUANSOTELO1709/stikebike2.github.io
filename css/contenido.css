@@ -47,44 +47,40 @@
   }
   
   .lista {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0; 
+    padding: 0; 
     border: 1px solid green;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     gap: 1.5rem;
-    height: 500px;
-    overflow-x: auto; /* Agrega desplazamiento horizontal */
-    overflow-y: hidden; /* Quita desplazamiento vertical */
-    white-space: nowrap; /* Evita que los elementos se salten a la siguiente línea */
-    flex-wrap: nowrap; /* Evita que los elementos se salten a la siguiente línea */
-    scrollbar-width: none; /* Quita la barra de desplazamiento vertical en algunos navegadores */
-  }
-  
-  .lista p:nth-child(2) {
-    font-size: 14px; 
-    font-weight: 300; 
+    height: 100%; /* Ajusta la altura de la lista al 100% de la sección */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    width: 100%; /* Ajusta el ancho de la lista al 100% de la sección */
   }
   
   .lista li {
     list-style-type: none;
-    margin: 0;
+    margin: 0.5rem; /* Ajusta la margen entre elementos li */
     padding: 1rem;
     border: 1px solid yellow;
-    height: 400px;
-    display: inline-block; /* Muestra los elementos en línea */
-    text-align: center; /* Centra el texto horizontalmente */
-  }
-  
+    height: 250px; /* Ajusta la altura de cada elemento li */
+    display: inline-block;
+    text-align: center;
+    width: 200px; /* Ajusta el ancho de cada elemento li */
+}
   .lista li img {
-    width: 80%; /* Ajusta el ancho de la imagen al 80% del contenedor */
-    height: auto;
+    width: 100%; 
+    height: 200px; /* Ajusta la altura de la imagen para que se vea correctamente */
     max-width: 280px;
     max-height: 280px;
     object-fit: cover;
     border-radius: 8px;
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    display: block; /* Establece la imagen como un bloque */
+    margin: 0 auto; 
+    display: block; 
   }
   
   .lista li:nth-child(n+5) {
@@ -97,8 +93,30 @@
     gap: .5rem;
   }
   
-  @media (max-width: 359px) {
+  /* Estilos para pantallas pequeñas (móvil) */
+/* Estilos para pantallas pequeñas (móvil) */
+@media (max-width: 480px) {
     .lista {
-      grid-template-columns: repeat(1, 1fr); 
-    } 
-}
+      grid-template-columns: repeat(4, 1fr); /* 4 columnas en móviles */
+      height: auto; /* Permitir que la altura se ajuste automáticamente */
+    }
+    .lista li {
+      height: 180px; /* Ajustar la altura para móviles */
+      width: 160px; /* Ajustar el ancho de cada elemento li para móviles */
+    }
+    .lista li img {
+      max-width: 140px; /* Ajustar el ancho máximo de la imagen para móviles */
+      max-height: 140px; /* Ajustar el alto máximo de la imagen para móviles */
+      height: 120px; /* Ajustar la altura de la imagen para móviles */
+    }
+  }
+  /* Estilos para pantallas medianas y grandes (PC) */
+  @media (min-width: 481px) {
+    .lista li {
+      width: 250px; /* Ajusta el ancho de cada elemento li para pantallas de PC */
+      height: 300px; /* Ajusta la altura de cada elemento li para pantallas de PC */
+    }
+    .lista li img {
+      height: 250px; /* Ajusta la altura de la imagen para que se vea correctamente en pantallas de PC */
+    }
+  }
