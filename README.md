@@ -4,7 +4,7 @@ Bienvenido a **StikeBike** - tu tienda en línea especializada en bicicletas BMX
 
 ## Descripción
 
-StikeBike2 es una plataforma de comercio electrónico dedicada a los entusiastas de las bicicletas BMX. Ofrecemos una amplia gama de bicicletas, accesorios y equipamiento para ciclistas de todos los niveles. Nuestra misión es proporcionar productos de alta calidad y un excelente servicio al cliente para que cada ciclista pueda disfrutar de su pasión al máximo.
+StikeBike es una plataforma de comercio electrónico dedicada a los entusiastas de las bicicletas BMX. Ofrecemos una amplia gama de bicicletas, accesorios y equipamiento para ciclistas de todos los niveles. Nuestra misión es proporcionar productos de alta calidad y un excelente servicio al cliente para que cada ciclista pueda disfrutar de su pasión al máximo.
 
 ## Características
 
@@ -16,7 +16,7 @@ StikeBike2 es una plataforma de comercio electrónico dedicada a los entusiastas
 
 ## Demo
 
-Puedes visitar nuestra tienda en línea aquí: [StikeBike2](https://juansotelo1709.github.io/stikebike2.github.io/)
+Puedes visitar nuestra tienda en línea aquí: [StikeBike](https://juansotelo1709.github.io/stikebike2.github.io/)
 
 ## Instalación
 
